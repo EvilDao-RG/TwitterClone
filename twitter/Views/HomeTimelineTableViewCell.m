@@ -22,6 +22,7 @@
     // Configure the view for the selected state
 }
 
+
 - (void) setTweet:(Tweet *) tweet{
     _tweet = tweet;
     
@@ -36,8 +37,7 @@
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     self.profilePicture.image = [UIImage imageWithData:urlData];
-    
-    NSLog(@"Tweet cell set up");
+
 }
 
 @end
