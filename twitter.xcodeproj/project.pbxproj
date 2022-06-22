@@ -19,6 +19,7 @@
 		6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790820BCC04D0085BC29 /* TimelineViewController.m */; };
 		8E8E052128613539003C4CB8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E052028613539003C4CB8 /* User.m */; };
 		8E8E05242861354A003C4CB8 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E05232861354A003C4CB8 /* Tweet.m */; };
+		8E8E053328637719003C4CB8 /* HomeTimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E053228637719003C4CB8 /* HomeTimelineTableViewCell.m */; };
 		8ED7686B286127EE0053403A /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED7686A286127EE0053403A /* Keys.plist */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		8E8E052028613539003C4CB8 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		8E8E05222861354A003C4CB8 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		8E8E05232861354A003C4CB8 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		8E8E053128637719003C4CB8 /* HomeTimelineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTimelineTableViewCell.h; sourceTree = "<group>"; };
+		8E8E053228637719003C4CB8 /* HomeTimelineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTimelineTableViewCell.m; sourceTree = "<group>"; };
 		8ED7686A286127EE0053403A /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +134,8 @@
 		6AD278FF20BCBF280085BC29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E8E053128637719003C4CB8 /* HomeTimelineTableViewCell.h */,
+				8E8E053228637719003C4CB8 /* HomeTimelineTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,7 +187,7 @@
 		6AD278CD20BC4B950085BC29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Emerson Malca";
 				TargetAttributes = {
 					6AD278D420BC4B950085BC29 = {
@@ -250,6 +255,7 @@
 			files = (
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				8E8E052128613539003C4CB8 /* User.m in Sources */,
+				8E8E053328637719003C4CB8 /* HomeTimelineTableViewCell.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
 				8E8E05242861354A003C4CB8 /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
@@ -307,6 +313,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -332,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -365,6 +372,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -384,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
