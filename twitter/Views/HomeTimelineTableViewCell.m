@@ -44,6 +44,8 @@
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
     self.profilePicture.image = [UIImage imageWithData:urlData];
+    
+    [self refreshData];
 }
 
 
@@ -80,6 +82,22 @@
 }
 
 
+- (IBAction)didTapRetweet:(id)sender {
+    if(self.tweet.retweeted){
+        self.tweet.retweeted = NO;
+        self.tweet.retweetCount -= 1;
+        
+    } else {
+        self.tweet.retweeted = YES;
+        self.tweet.retweetCount += 1;
+        [self retweetTweet];
+    }
+    [self refreshData];
+}
+
+
+
+
 - (void)favoriteTweet{
     [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
         if(error){
@@ -93,7 +111,13 @@
 
 
 - (void)retweetTweet{
-    
+    [[APIManager shared] retweet:self.tweet completion: ^(Tweet *tweet, NSError *error) {
+        if(error){
+            NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
+        } else {
+            NSLog(@"Succesfully retweeted the following tweet: %@", tweet.text);
+        }
+    }];
 }
 
 @end
