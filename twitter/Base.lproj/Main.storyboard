@@ -225,6 +225,25 @@
             </objects>
             <point key="canvasLocation" x="1308" y="581.55922038980509"/>
         </scene>
+        <!--Compose a Tweet-->
+        <scene sceneID="6ps-cF-aBT">
+            <objects>
+                <viewController id="tWh-Oc-I0A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="295-gE-2y3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="d16-nA-umA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose a Tweet" id="gbm-sZ-yVu">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="tDb-87-qKO"/>
+                        <barButtonItem key="rightBarButtonItem" image="edit-icon" id="W4F-5O-tAq"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gea-Fr-Eoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2300" y="581"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WUT-Ke-VeR">
             <objects>
@@ -243,9 +262,26 @@
             </objects>
             <point key="canvasLocation" x="1308" y="-142"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LJe-az-4SV">
+            <objects>
+                <navigationController id="ZNz-st-Zbb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ycv-zd-Zuj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tWh-Oc-I0A" kind="relationship" relationship="rootViewController" id="nnj-YU-VpN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CI3-Zf-Oiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2300" y="-143"/>
+        </scene>
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
+        <image name="close-icon" width="26" height="24"/>
         <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="message-icon" width="30" height="30"/>
