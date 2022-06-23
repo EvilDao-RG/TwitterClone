@@ -135,11 +135,18 @@
                                                     <rect key="frame" x="148.5" y="98" width="30" height="30"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="" image="retweet-icon"/>
+                                                    <connections>
+                                                        <action selector="didTapRetweet:" destination="ZW5-dQ-xjr" eventType="touchUpInside" id="8hM-Gc-H04"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSA-lb-ka8" userLabel="Favorite">
                                                     <rect key="frame" x="239" y="96" width="30" height="30"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="" image="favor-icon"/>
+                                                    <state key="selected" image="favor-icon-red"/>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="ZW5-dQ-xjr" eventType="touchUpInside" id="SEk-6f-7Yn"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjN-CC-rBI" userLabel="Message">
                                                     <rect key="frame" x="325" y="101" width="30" height="30"/>
@@ -189,9 +196,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="createdAt" destination="OB1-Os-n9K" id="TIJ-72-KeV"/>
+                                            <outlet property="favoriteButton" destination="lSA-lb-ka8" id="zZh-mc-pNG"/>
                                             <outlet property="favoriteCount" destination="a3f-hq-Ybu" id="09d-dK-5KF"/>
                                             <outlet property="name" destination="3P8-LU-D40" id="JJa-F3-JeD"/>
                                             <outlet property="profilePicture" destination="7Bo-hk-n48" id="eiz-mQ-QtS"/>
+                                            <outlet property="retweetButton" destination="3Cq-oC-0Up" id="DlD-U8-jCv"/>
                                             <outlet property="retweetCount" destination="nEc-AR-XVX" id="iac-VG-IpP"/>
                                             <outlet property="screenName" destination="WxQ-yI-VFK" id="RiK-qZ-DZH"/>
                                             <outlet property="tweetText" destination="cXu-i5-Hcg" id="gho-0A-2wH"/>
@@ -325,6 +334,7 @@
         <image name="close-icon" width="26" height="24"/>
         <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="favor-icon-red" width="30" height="30"/>
         <image name="message-icon" width="30" height="30"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>

@@ -46,11 +46,6 @@
         if (tweets) {
             self.arrayOfTweets = [NSMutableArray arrayWithArray:tweets];
             [self.tableView reloadData];
-            NSLog(@"😎😎😎 Successfully loaded home timeline %lu", self.arrayOfTweets.count);
-            for (Tweet *tweet in tweets) {
-                NSString *text = tweet.text;
-                NSLog(@"%@", text);
-            }
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
