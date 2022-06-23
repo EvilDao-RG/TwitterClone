@@ -136,7 +136,7 @@
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="" image="retweet-icon"/>
                                                     <connections>
-                                                        <action selector="didTapRetweet:" destination="ZW5-dQ-xjr" eventType="touchUpInside" id="8hM-Gc-H04"/>
+                                                        <action selector="didTapRetweet:" destination="ZW5-dQ-xjr" eventType="touchUpInside" id="gKQ-YI-use"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSA-lb-ka8" userLabel="Favorite">
