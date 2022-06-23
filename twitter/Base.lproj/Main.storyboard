@@ -85,7 +85,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P8-LU-D40">
-                                                    <rect key="frame" x="66" y="8" width="79.5" height="23.5"/>
+                                                    <rect key="frame" x="66" y="8" width="79.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -96,8 +96,8 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB1-Os-n9K">
-                                                    <rect key="frame" x="321" y="11" width="46" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="1m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB1-Os-n9K">
+                                                    <rect key="frame" x="341.5" y="11" width="21.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -167,7 +167,7 @@
                                                 <constraint firstItem="OB1-Os-n9K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WxQ-yI-VFK" secondAttribute="trailing" constant="8" id="JxC-av-Ebp"/>
                                                 <constraint firstItem="OB1-Os-n9K" firstAttribute="top" secondItem="oc2-Km-VrH" secondAttribute="top" constant="11" id="K9J-IA-sHf"/>
                                                 <constraint firstAttribute="trailing" secondItem="cXu-i5-Hcg" secondAttribute="trailing" constant="8" id="LRB-tb-wOp"/>
-                                                <constraint firstAttribute="trailing" secondItem="OB1-Os-n9K" secondAttribute="trailing" constant="8" id="MRo-kc-1OR"/>
+                                                <constraint firstAttribute="trailing" secondItem="OB1-Os-n9K" secondAttribute="trailing" constant="12" id="MRo-kc-1OR"/>
                                                 <constraint firstItem="WxQ-yI-VFK" firstAttribute="leading" secondItem="3P8-LU-D40" secondAttribute="trailing" constant="8" id="MlT-bN-UE4"/>
                                                 <constraint firstAttribute="bottom" secondItem="gjN-CC-rBI" secondAttribute="bottom" constant="4" id="O0h-Pl-VWu"/>
                                                 <constraint firstItem="QGi-al-huw" firstAttribute="leading" secondItem="aPz-UT-OtN" secondAttribute="trailing" id="O1v-ml-2hW"/>
@@ -188,7 +188,7 @@
                                                 <constraint firstItem="aPz-UT-OtN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cXu-i5-Hcg" secondAttribute="bottom" constant="2" id="c3k-I7-JLu"/>
                                                 <constraint firstItem="gjN-CC-rBI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a3f-hq-Ybu" secondAttribute="trailing" constant="5" id="fYY-Pk-JvK"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Bo-hk-n48" secondAttribute="bottom" constant="8" id="g6A-Tu-smM"/>
-                                                <constraint firstItem="cXu-i5-Hcg" firstAttribute="top" secondItem="3P8-LU-D40" secondAttribute="bottom" constant="8" id="irF-Y0-yPT"/>
+                                                <constraint firstItem="cXu-i5-Hcg" firstAttribute="top" secondItem="3P8-LU-D40" secondAttribute="bottom" constant="4" id="irF-Y0-yPT"/>
                                                 <constraint firstItem="a3f-hq-Ybu" firstAttribute="leading" secondItem="lSA-lb-ka8" secondAttribute="trailing" id="j5f-l4-D3b"/>
                                                 <constraint firstItem="7Bo-hk-n48" firstAttribute="leading" secondItem="oc2-Km-VrH" secondAttribute="leading" constant="8" id="koO-Gq-pDY"/>
                                                 <constraint firstItem="3P8-LU-D40" firstAttribute="top" secondItem="oc2-Km-VrH" secondAttribute="top" constant="8" id="ldu-59-VQi"/>
