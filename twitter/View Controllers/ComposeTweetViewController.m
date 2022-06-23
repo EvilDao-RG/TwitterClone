@@ -7,8 +7,10 @@
 //
 
 #import "ComposeTweetViewController.h"
+#import "APIManager.h"
 
 @interface ComposeTweetViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *postText;
 
 @end
 
@@ -21,6 +23,18 @@
 
 
 - (IBAction)didTapTweet:(id)sender {
+    if (self.postText.text != nil){
+        [[APIManager shared]postStatusWithText:self.postText.text completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                NSLog(@"Error composing Tweet: %@", error.localizedDescription);
+            }
+            else{
+                [self.delegate didTweet:tweet];
+                NSLog(@"Compose Tweet Success!");
+            }
+        }];
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
 }
 
 
