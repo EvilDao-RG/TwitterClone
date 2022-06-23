@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeTweetViewController : UIViewController
 @property (nonatomic, weak) id<ComposeTweetViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSString* profilePictureURL;
 @end
 
 NS_ASSUME_NONNULL_END

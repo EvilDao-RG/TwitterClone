@@ -278,6 +278,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="postText" destination="IKf-9A-jTp" id="jiy-c2-YrT"/>
+                        <outlet property="profilePic" destination="0yx-oQ-xZH" id="lA7-jK-wKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gea-Fr-Eoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

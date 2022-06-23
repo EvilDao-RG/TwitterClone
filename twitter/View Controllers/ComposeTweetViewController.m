@@ -11,6 +11,7 @@
 
 @interface ComposeTweetViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *postText;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 
 @end
 
@@ -18,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Giving a border with color for the user to see the text view
+    self.postText.layer.borderWidth = 3.0f;
+    self.postText.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.postText.layer.cornerRadius = 5;
 }
 
 
