@@ -9,6 +9,7 @@
 #import "HomeTimelineTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
+#import "NSDate+DateTools.h"
 
 @interface HomeTimelineTableViewCell()
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
@@ -26,20 +27,23 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void) setTweet:(Tweet *) tweet{
     _tweet = tweet;
     
     self.name.text = self.tweet.user.name;
-    self.screenName.text = self.tweet.user.screenName;
+    // Setting up screenName including the @ at the beginning
+    NSString *screenName = @"@";
+    self.screenName.text = [screenName stringByAppendingString: self.tweet.user.screenName];
+    
     self.tweetText.text = [NSString stringWithFormat:@"%@", self.tweet.text ];
     self.retweetCount.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
     self.favoriteCount.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
-    self.createdAt.text = self.tweet.createdAtString;
-    
+    // Converting the date to relative to now in a short way
+    NSString *formattedDate = [self.tweet.creationDate shortTimeAgoSinceNow];
+    self.createdAt.text = formattedDate;
+    // Setting up the image
     NSString *URLString = self.tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];
