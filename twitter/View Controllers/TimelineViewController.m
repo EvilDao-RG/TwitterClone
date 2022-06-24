@@ -13,6 +13,7 @@
 #import "Tweet.h"
 #import "HomeTimelineTableViewCell.h"
 #import "ComposeTweetViewController.h"
+#import "TweetDetailsViewController.h"
 
 @interface TimelineViewController () <ComposeTweetViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -39,6 +40,9 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [self getTimeline];
+}
 
 - (void) getTimeline{
     // Get timeline
@@ -94,16 +98,34 @@
 }
 
 
+- (void) didInteract{
+    [self getTimeline];
+}
+
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeTweetViewController *composeTweetController = (ComposeTweetViewController *) navigationController.topViewController;
-    composeTweetController.delegate = self;
+    
+    // If user tapped on the compose tweet button
+    BOOL isComposeSegue = [segue.identifier isEqualToString:@"ComposeSegue"];
+    if(isComposeSegue){
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeTweetViewController *composeTweetController = (ComposeTweetViewController *) navigationController.topViewController;
+        composeTweetController.delegate = self;
+    }
+    
+    // If user tapped on a tweet
+    BOOL isDetailSegue = [segue.identifier isEqualToString:@"DetailSegue"];
+    if(isDetailSegue){
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+
+        TweetDetailsViewController *tweetDeatailsViewController = [segue destinationViewController];
+        tweetDeatailsViewController.tweet = self.arrayOfTweets[indexPath.row];
+        
+    }
+    
     
 }
 
