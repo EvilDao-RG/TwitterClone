@@ -9,9 +9,10 @@
 #import "ComposeTweetViewController.h"
 #import "APIManager.h"
 
-@interface ComposeTweetViewController ()
+@interface ComposeTweetViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *postText;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UILabel *characterCount;
 
 @end
 
@@ -19,10 +20,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.postText.delegate = self;
     // Giving a border with color for the user to see the text view
     self.postText.layer.borderWidth = 3.0f;
     self.postText.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.postText.layer.cornerRadius = 5;
+}
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    NSNumber* characterLimit = @140;
+    NSString *postText = [self.postText.text stringByReplacingCharactersInRange:range withString:text];
+    
+    NSNumber* postLength = [NSNumber numberWithLong:postText.length];
+    self.characterCount.text = [NSString stringWithFormat:@"%@/140",postLength];
+    
+    return postLength.integerValue < characterLimit.integerValue;
 }
 
 
@@ -46,15 +59,5 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

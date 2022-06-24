@@ -248,30 +248,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-oQ-xZH">
-                                <rect key="frame" x="16" y="81" width="50" height="50"/>
+                                <rect key="frame" x="16" y="96" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="idx-Tl-DRg"/>
                                     <constraint firstAttribute="width" constant="50" id="xQD-9M-W3J"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-9A-jTp">
-                                <rect key="frame" x="76" y="76" width="289" height="171"/>
+                                <rect key="frame" x="76" y="92" width="289" height="505"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4g-3f-Txf">
+                                <rect key="frame" x="315" y="66" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d16-nA-umA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IKf-9A-jTp" firstAttribute="top" secondItem="y4g-3f-Txf" secondAttribute="bottom" constant="5" id="4jV-U3-9Ve"/>
                             <constraint firstItem="0yx-oQ-xZH" firstAttribute="leading" secondItem="d16-nA-umA" secondAttribute="leading" constant="16" id="55T-TY-DkL"/>
                             <constraint firstItem="d16-nA-umA" firstAttribute="trailing" secondItem="IKf-9A-jTp" secondAttribute="trailing" constant="10" id="7no-PS-XAp"/>
-                            <constraint firstItem="d16-nA-umA" firstAttribute="bottom" secondItem="IKf-9A-jTp" secondAttribute="bottom" constant="400" id="Agz-6a-F7W"/>
-                            <constraint firstItem="IKf-9A-jTp" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="20" id="EJG-uZ-aG0"/>
+                            <constraint firstItem="d16-nA-umA" firstAttribute="bottom" secondItem="IKf-9A-jTp" secondAttribute="bottom" constant="50" id="Agz-6a-F7W"/>
                             <constraint firstItem="IKf-9A-jTp" firstAttribute="leading" secondItem="0yx-oQ-xZH" secondAttribute="trailing" constant="10" id="Ihj-B1-NRG"/>
+                            <constraint firstItem="d16-nA-umA" firstAttribute="trailing" secondItem="y4g-3f-Txf" secondAttribute="trailing" constant="16" id="SXo-Hv-XvS"/>
                             <constraint firstItem="d16-nA-umA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="0yx-oQ-xZH" secondAttribute="bottom" constant="521" id="TCk-8k-sJ1"/>
-                            <constraint firstItem="0yx-oQ-xZH" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="25" id="qHo-r7-mvr"/>
+                            <constraint firstItem="0yx-oQ-xZH" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="40" id="qHo-r7-mvr"/>
+                            <constraint firstItem="y4g-3f-Txf" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="10" id="zOZ-hD-PL2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Compose a Tweet" id="gbm-sZ-yVu">
@@ -287,6 +296,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterCount" destination="y4g-3f-Txf" id="0F6-lc-C2P"/>
                         <outlet property="postText" destination="IKf-9A-jTp" id="jiy-c2-YrT"/>
                         <outlet property="profilePic" destination="0yx-oQ-xZH" id="lA7-jK-wKB"/>
                     </connections>
@@ -489,6 +499,9 @@
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
