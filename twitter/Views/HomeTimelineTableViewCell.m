@@ -90,7 +90,7 @@
     if(self.tweet.retweeted){
         self.tweet.retweeted = NO;
         self.tweet.retweetCount -= 1;
-        
+        [self unretweetTweet];
     } else {
         self.tweet.retweeted = YES;
         self.tweet.retweetCount += 1;
@@ -120,6 +120,17 @@
             NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
         } else {
             NSLog(@"Succesfully retweeted the following tweet: %@", tweet.text);
+        }
+    }];
+}
+
+
+- (void)unretweetTweet{
+    [[APIManager shared] unretweet:self.tweet completion: ^(Tweet *tweet, NSError *error) {
+        if(error){
+            NSLog(@"Error unretweeting tweet: %@", error.localizedDescription);
+        } else {
+            NSLog(@"Succesfully unretweeted the following tweet: %@", tweet.text);
         }
     }];
 }
