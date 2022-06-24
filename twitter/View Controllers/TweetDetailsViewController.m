@@ -47,6 +47,20 @@
     self.retweetCount.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
     self.favoriteCount.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
 
+    // Setting up a date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    // Format to show at date label
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    self.dateString.text = [dateFormatter stringFromDate:self.tweet.creationDate];
+    
+    // Format to show at time label
+    dateFormatter.dateStyle = NSDateFormatterNoStyle;
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    self.timeString.text = [dateFormatter stringFromDate:self.tweet.creationDate];
+    
     // Setting up the image
     NSString *URLString = self.tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
