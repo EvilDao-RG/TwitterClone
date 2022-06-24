@@ -35,7 +35,7 @@
     NSNumber* postLength = [NSNumber numberWithLong:postText.length];
     self.characterCount.text = [NSString stringWithFormat:@"%@/140",postLength];
     
-    return postLength < characterLimit;
+    return postLength.integerValue < characterLimit.integerValue;
 }
 
 

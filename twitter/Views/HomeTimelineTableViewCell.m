@@ -107,9 +107,6 @@
         if(error){
              NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
         }
-        else{
-            NSLog(@"Successfully favorited the following Tweet: %@", tweet.text);
-        }
     }];
 }
 
@@ -118,8 +115,6 @@
     [[APIManager shared] retweet:self.tweet completion: ^(Tweet *tweet, NSError *error) {
         if(error){
             NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
-        } else {
-            NSLog(@"Succesfully retweeted the following tweet: %@", tweet.text);
         }
     }];
 }
@@ -129,8 +124,6 @@
     [[APIManager shared] unretweet:self.tweet completion: ^(Tweet *tweet, NSError *error) {
         if(error){
             NSLog(@"Error unretweeting tweet: %@", error.localizedDescription);
-        } else {
-            NSLog(@"Succesfully unretweeted the following tweet: %@", tweet.text);
         }
     }];
 }
