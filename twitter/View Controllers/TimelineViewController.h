@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimelineViewController : UIViewController
-
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 @end
