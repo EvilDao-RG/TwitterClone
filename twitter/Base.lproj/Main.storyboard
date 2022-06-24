@@ -261,6 +261,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4g-3f-Txf">
+                                <rect key="frame" x="315" y="263" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d16-nA-umA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -270,7 +276,9 @@
                             <constraint firstItem="d16-nA-umA" firstAttribute="bottom" secondItem="IKf-9A-jTp" secondAttribute="bottom" constant="400" id="Agz-6a-F7W"/>
                             <constraint firstItem="IKf-9A-jTp" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="20" id="EJG-uZ-aG0"/>
                             <constraint firstItem="IKf-9A-jTp" firstAttribute="leading" secondItem="0yx-oQ-xZH" secondAttribute="trailing" constant="10" id="Ihj-B1-NRG"/>
+                            <constraint firstItem="d16-nA-umA" firstAttribute="trailing" secondItem="y4g-3f-Txf" secondAttribute="trailing" constant="16" id="SXo-Hv-XvS"/>
                             <constraint firstItem="d16-nA-umA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="0yx-oQ-xZH" secondAttribute="bottom" constant="521" id="TCk-8k-sJ1"/>
+                            <constraint firstItem="y4g-3f-Txf" firstAttribute="top" secondItem="IKf-9A-jTp" secondAttribute="bottom" constant="16" id="nL0-8G-GDF"/>
                             <constraint firstItem="0yx-oQ-xZH" firstAttribute="top" secondItem="d16-nA-umA" secondAttribute="top" constant="25" id="qHo-r7-mvr"/>
                         </constraints>
                     </view>
@@ -287,6 +295,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterCount" destination="y4g-3f-Txf" id="0F6-lc-C2P"/>
                         <outlet property="postText" destination="IKf-9A-jTp" id="jiy-c2-YrT"/>
                         <outlet property="profilePic" destination="0yx-oQ-xZH" id="lA7-jK-wKB"/>
                     </connections>
