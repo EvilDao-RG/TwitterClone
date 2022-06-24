@@ -40,6 +40,9 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [self getTimeline];
+}
 
 - (void) getTimeline{
     // Get timeline
@@ -94,6 +97,10 @@
     [self.tableView reloadData];
 }
 
+
+- (void) didInteract{
+    [self getTimeline];
+}
 
 
 #pragma mark - Navigation

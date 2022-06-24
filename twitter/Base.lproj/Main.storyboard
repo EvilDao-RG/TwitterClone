@@ -349,12 +349,18 @@
                                 <rect key="frame" x="139" y="254" width="30" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="retweet-icon"/>
+                                <connections>
+                                    <action selector="didTapRetweet:" destination="hV1-Tj-XKf" eventType="touchUpInside" id="pi9-nA-59f"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-3b-7nF" userLabel="Favorite">
-                                <rect key="frame" x="246" y="254" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-3b-7nF" userLabel="Favorite">
+                                <rect key="frame" x="246" y="255" width="30" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="favor-icon"/>
                                 <state key="selected" image="favor-icon-red"/>
+                                <connections>
+                                    <action selector="didTapFavorite:" destination="hV1-Tj-XKf" eventType="touchUpInside" id="81g-hH-D45"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhN-Px-1T2" userLabel="Message">
                                 <rect key="frame" x="317" y="256" width="30" height="30"/>
