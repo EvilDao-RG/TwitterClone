@@ -7,6 +7,8 @@
 //
 
 #import "TweetDetailsViewController.h"
+#import "UIImageView+AFNetworking.h"
+#import "APIManager.h"
 
 @interface TweetDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
@@ -30,9 +32,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setTweet:self.tweet];
 }
 
+- (void)setTweet:(Tweet *)tweet{
+    _tweet = tweet;
+    
+    self.name.text = self.tweet.user.name;
+    // Setting up screenName including the @ at the beginning
+    NSString *screenName = @"@";
+    self.screenName.text = [screenName stringByAppendingString: self.tweet.user.screenName];
+    
+    self.tweetText.text = [NSString stringWithFormat:@"%@", self.tweet.text ];
+    self.retweetCount.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];
+    self.favoriteCount.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
 
+    // Setting up the image
+    NSString *URLString = self.tweet.user.profilePicture;
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSData *urlData = [NSData dataWithContentsOfURL:url];
+    self.profilePicture.image = [UIImage imageWithData:urlData];
+}
 
 
 /*

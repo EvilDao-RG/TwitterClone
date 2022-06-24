@@ -100,8 +100,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    // If user tapped on the compose tweet button
     BOOL isComposeSegue = [segue.identifier isEqualToString:@"ComposeSegue"];
     if(isComposeSegue){
         UINavigationController *navigationController = [segue destinationViewController];
@@ -109,6 +109,7 @@
         composeTweetController.delegate = self;
     }
     
+    // If user tapped on a tweet
     BOOL isDetailSegue = [segue.identifier isEqualToString:@"DetailSegue"];
     if(isDetailSegue){
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];

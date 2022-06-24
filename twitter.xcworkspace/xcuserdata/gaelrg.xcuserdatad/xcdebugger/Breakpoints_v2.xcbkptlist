@@ -46,8 +46,8 @@
             filePath = "twitter/View Controllers/TweetDetailsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "TweetDetailsViewController()"
             landmarkType = "2">
          </BreakpointContent>
