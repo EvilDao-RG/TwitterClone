@@ -35,18 +35,18 @@
     [refreshControl addTarget:self action:@selector(refreshingView:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
     
-    [self getTimeline];
+    [self getTimeline:20];
 
     
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [self getTimeline];
+    [self getTimeline:self.arrayOfTweets.count];
 }
 
-- (void) getTimeline{
+- (void) getTimeline:(unsigned long)tweetsToLoad{
     // Get timeline
-    [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+    [[APIManager shared] getHomeTimelineWithCompletion:tweetsToLoad completion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.arrayOfTweets = [NSMutableArray arrayWithArray:tweets];
             [self.tableView reloadData];
@@ -74,7 +74,7 @@
 
 
 - (void) refreshingView:(UIRefreshControl *)refreshControl{
-    [self getTimeline];
+    [self getTimeline:20];
     [refreshControl endRefreshing];
 }
 
@@ -92,14 +92,21 @@
 }
 
 
-- (void) didTweet:(Tweet *)tweet{
-    [self.arrayOfTweets addObject:tweet];
-    [self.tableView reloadData];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    if(indexPath.row + 1 == [self.arrayOfTweets count]){
+        [self loadMoreTweets];
+    }
 }
 
 
-- (void) didInteract{
-    [self getTimeline];
+- (void)loadMoreTweets{
+    [self getTimeline:self.arrayOfTweets.count + 20];
+}
+
+
+- (void) didTweet:(Tweet *)tweet{
+    [self.arrayOfTweets addObject:tweet];
+    [self.tableView reloadData];
 }
 
 
