@@ -27,7 +27,7 @@
     self.postText.layer.cornerRadius = 5;
 }
 
-
+// Verifies the text length to allow or prevent the user from typing
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSNumber* characterLimit = @140;
     NSString *postText = [self.postText.text stringByReplacingCharactersInRange:range withString:text];
@@ -38,7 +38,7 @@
     return postLength.integerValue < characterLimit.integerValue;
 }
 
-
+// Calls the API to post a tweet with the text view's content
 - (IBAction)didTapTweet:(id)sender {
     if (self.postText.text != nil){
         [[APIManager shared]postStatusWithText:self.postText.text completion:^(Tweet *tweet, NSError *error) {
@@ -47,7 +47,6 @@
             }
             else{
                 [self.delegate didTweet:tweet];
-                NSLog(@"Compose Tweet Success!");
             }
         }];
         [self dismissViewControllerAnimated:true completion:nil];

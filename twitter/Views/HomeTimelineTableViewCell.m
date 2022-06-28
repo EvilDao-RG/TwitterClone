@@ -52,7 +52,7 @@
     [self refreshData];
 }
 
-
+// Refreshes UI changes when a retweet or favorite happens
 - (void) refreshData{
     
     self.retweetCount.text = [NSString stringWithFormat:@"%d", self.tweet.retweetCount];

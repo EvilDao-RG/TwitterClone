@@ -52,6 +52,11 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     return self;
 }
 
+/* This method posts a tweet composed by text only.
+ * @param text: The content of the tweet.
+ * @param completion: It is used as a medium to send the request's result, it is composed by a tweet object and an error.
+ * @return Tweet object if successful, otherwise, an error.
+ */
 - (void)getHomeTimelineWithCompletion:(unsigned long)tweetsToLoad completion:(void(^)(NSArray *tweets, NSError *error)) completion {
     NSNumber* numberOfTweets = [NSNumber numberWithLong:tweetsToLoad];
     NSDictionary *parameters = @{@"count": numberOfTweets};
@@ -80,7 +85,12 @@ static NSString * const baseURLString = @"https://api.twitter.com";
    }];
 }
 
-
+/* This method gets a list of tweets from the user's Twitter feed, each tweet includes author, number of favorites, number of retweets,
+ * text including links to images and media embedded in it, creation time and date, etc.
+ * @param tweetsToLoad: Is sent as a parameter in the request to the API to pull that amount of tweets.
+ * @param completion: It is used as a medium to send the request's result, it is composed by an array of tweets and an error.
+ * @return Array of tweets if successful, otherwise, an error.
+ */
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion {
     NSString *urlString = @"1.1/statuses/update.json";
     NSDictionary *parameters = @{@"status": text};
@@ -93,7 +103,7 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     }];
 }
 
-
+// Marks a tweet as liked or favorited
 - (void)favorite:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion {
 
     NSString *urlString = @"1.1/favorites/create.json";
@@ -106,7 +116,7 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     }];
 }
 
-
+// Retweets a tweet
 - (void)retweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion {
 
     NSString *urlString = [NSString stringWithFormat: @"1.1/statuses/retweet/%@.json", tweet.idStr];
@@ -119,7 +129,7 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     }];
 }
 
-
+// Unretweets a tweet
 - (void)unretweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion {
 
     NSString *urlString = [NSString stringWithFormat: @"1.1/statuses/unretweet/%@.json", tweet.idStr];

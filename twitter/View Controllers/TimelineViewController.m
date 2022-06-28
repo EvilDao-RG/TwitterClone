@@ -37,13 +37,14 @@
     
     [self getTimeline:20];
 
-    
 }
 
+// Each time the view shows in screen, it reloads
 - (void)viewDidAppear:(BOOL)animated{
     [self getTimeline:self.arrayOfTweets.count];
 }
 
+// Calls the API to retrieve the tweets
 - (void) getTimeline:(unsigned long)tweetsToLoad{
     // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:tweetsToLoad completion:^(NSArray *tweets, NSError *error) {
@@ -62,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+// Logs out the user
 - (IBAction)didTapLogout:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
@@ -72,7 +73,7 @@
     [[APIManager shared] logout];
 }
 
-
+// Handles page refreshing
 - (void) refreshingView:(UIRefreshControl *)refreshControl{
     [self getTimeline:20];
     [refreshControl endRefreshing];
@@ -91,7 +92,7 @@
     return self.arrayOfTweets.count;
 }
 
-
+// When reached the bottom, calls for more tweets
 - (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     if(indexPath.row + 1 == [self.arrayOfTweets count]){
         [self loadMoreTweets];
@@ -103,7 +104,7 @@
     [self getTimeline:self.arrayOfTweets.count + 20];
 }
 
-
+// Adds the recently posted tweet to the feed
 - (void) didTweet:(Tweet *)tweet{
     [self.arrayOfTweets addObject:tweet];
     [self.tableView reloadData];
@@ -132,8 +133,6 @@
         tweetDeatailsViewController.tweet = self.arrayOfTweets[indexPath.row];
         
     }
-    
-    
 }
 
 
